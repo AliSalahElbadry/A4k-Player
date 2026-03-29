@@ -21,91 +21,142 @@
         h1, h2 {
             color: #58a6ff;
         }
-        p {
+        p, li {
             color: #c9d1d9;
+        }
+        body[dir="rtl"] {
+            direction: rtl;
+            text-align: right;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Privacy Policy</h1> 
-
-    <p>
-        A4K Player ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our application.
-    </p>
-
-    <h2>1. Information We Collect</h2>
-    <p>
-        We may collect limited information to improve our services:
-    </p>
-    <ul>
-        <li>Device information (model, OS version)</li>
-        <li>App usage data</li>
-        <li>Crash logs and diagnostics</li>
-    </ul>
-
-    <h2>2. Media Access</h2>
-    <p>
-        A4K Player may request access to your device storage to read and play video and audio files. We do not upload, store, or share your personal media files.
-    </p>
-
-    <h2>3. Advertising</h2>
-    <p>
-        We may use third-party advertising services such as Google AdMob or AppLovin. These services may collect information such as:
-    </p>
-    <ul>
-        <li>Advertising ID</li>
-        <li>Device information</li>
-        <li>Interaction with ads</li>
-    </ul>
-    <p>
-        Please refer to their privacy policies for more details.
-    </p>
-
-    <h2>4. Third-Party Services</h2>
-    <p>
-        We may use third-party services that may collect information used to identify you:
-    </p>
-    <ul>
-        <li>Google Play Services</li>
-        <li>AdMob</li>
-        <li>AppLovin</li>
-    </ul>
-
-    <h2>5. Data Security</h2>
-    <p>
-        We take reasonable measures to protect your information. However, no method of transmission over the internet is 100% secure.
-    </p>
-
-    <h2>6. Children's Privacy</h2>
-    <p>
-        Our application is not intended for children under the age of 13. We do not knowingly collect personal information from children.
-    </p>
-
-    <h2>7. User Rights</h2>
-    <p>
-        You have the right to:
-    </p>
-    <ul>
-        <li>Access your data</li>
-        <li>Request deletion of your data</li>
-        <li>Opt out of personalized ads</li>
-    </ul>
-
-    <h2>8. Changes to This Policy</h2>
-    <p>
-        We may update this Privacy Policy from time to time. Changes will be posted on this page.
-    </p>
-
-    <h2>9. Contact Us</h2>
-    <p>
-        If you have any questions, contact us at:
-        <br>
-        <strong>Email:</strong> AliSalahElbadryFahmy@gmail.com
-    </p>
-
+<div class="container" id="content">
+    <!-- Content will be injected by JS based on language -->
 </div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || 'en'; // default to English
+
+    const contentEn = `
+        <h1>Privacy Policy</h1> 
+        <p>A4K Player ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our application.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We may collect limited information to improve our services:</p>
+        <ul>
+            <li>Device information (model, OS version)</li>
+            <li>App usage data</li>
+            <li>Crash logs and diagnostics</li>
+        </ul>
+
+        <h2>2. Media Access</h2>
+        <p>A4K Player may request access to your device storage to read and play video and audio files. We do not upload, store, or share your personal media files.</p>
+
+        <h2>3. Advertising</h2>
+        <p>We may use third-party advertising services such as Google AdMob or AppLovin. These services may collect information such as:</p>
+        <ul>
+            <li>Advertising ID</li>
+            <li>Device information</li>
+            <li>Interaction with ads</li>
+        </ul>
+        <p>Please refer to their privacy policies for more details.</p>
+
+        <h2>4. Third-Party Services</h2>
+        <p>We may use third-party services that may collect information used to identify you:</p>
+        <ul>
+            <li>Google Play Services</li>
+            <li>AdMob</li>
+            <li>AppLovin</li>
+        </ul>
+
+        <h2>5. Data Security</h2>
+        <p>We take reasonable measures to protect your information. However, no method of transmission over the internet is 100% secure.</p>
+
+        <h2>6. Children's Privacy</h2>
+        <p>Our application is not intended for children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+        <h2>7. User Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access your data</li>
+            <li>Request deletion of your data</li>
+            <li>Opt out of personalized ads</li>
+        </ul>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
+
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions, contact us at:<br><strong>Email:</strong> AliSalahElbadryFahmy@gmail.com</p>
+    `;
+
+    const contentAr = `
+        <h1>سياسة الخصوصية</h1> 
+        <p>تطبيق A4K Player ("نحن"، "لنا"، أو "خاصتنا") يحترم خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمعنا لمعلوماتك واستخدامها وحمايتها عند استخدامك لتطبيقنا.</p>
+
+        <h2>1. المعلومات التي نجمعها</h2>
+        <p>قد نجمع معلومات محدودة لتحسين خدماتنا:</p>
+        <ul>
+            <li>معلومات الجهاز (النموذج، نسخة النظام)</li>
+            <li>بيانات استخدام التطبيق</li>
+            <li>سجلات الأعطال والتشخيص</li>
+        </ul>
+
+        <h2>2. الوصول إلى الوسائط</h2>
+        <p>قد يطلب تطبيق A4K Player الوصول إلى تخزين جهازك لقراءة وتشغيل ملفات الفيديو والصوت. نحن لا نقوم بتحميل أو تخزين أو مشاركة ملفات الوسائط الشخصية الخاصة بك.</p>
+
+        <h2>3. الإعلانات</h2>
+        <p>قد نستخدم خدمات إعلانية من أطراف ثالثة مثل Google AdMob أو AppLovin. قد تقوم هذه الخدمات بجمع معلومات مثل:</p>
+        <ul>
+            <li>معرّف الإعلان</li>
+            <li>معلومات الجهاز</li>
+            <li>التفاعل مع الإعلانات</li>
+        </ul>
+        <p>يرجى الرجوع إلى سياسات الخصوصية الخاصة بهم لمزيد من التفاصيل.</p>
+
+        <h2>4. خدمات الأطراف الثالثة</h2>
+        <p>قد نستخدم خدمات من أطراف ثالثة قد تجمع معلومات لتحديد هويتك:</p>
+        <ul>
+            <li>خدمات Google Play</li>
+            <li>AdMob</li>
+            <li>AppLovin</li>
+        </ul>
+
+        <h2>5. حماية البيانات</h2>
+        <p>نتخذ تدابير معقولة لحماية معلوماتك. ومع ذلك، لا توجد طريقة نقل عبر الإنترنت آمنة 100٪.</p>
+
+        <h2>6. خصوصية الأطفال</h2>
+        <p>تطبيقنا غير مخصص للأطفال دون سن 13 عامًا. نحن لا نجمع معلومات شخصية من الأطفال عن قصد.</p>
+
+        <h2>7. حقوق المستخدم</h2>
+        <p>لديك الحق في:</p>
+        <ul>
+            <li>الوصول إلى بياناتك</li>
+            <li>طلب حذف بياناتك</li>
+            <li>إلغاء الاشتراك من الإعلانات المخصصة</li>
+        </ul>
+
+        <h2>8. تغييرات على هذه السياسة</h2>
+        <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر التغييرات على هذه الصفحة.</p>
+
+        <h2>9. اتصل بنا</h2>
+        <p>إذا كان لديك أي أسئلة، تواصل معنا على:<br><strong>البريد الإلكتروني:</strong> AliSalahElbadryFahmy@gmail.com</p>
+    `;
+
+    // Set content and direction
+    if (lang === 'ar') {
+        document.body.setAttribute('dir', 'rtl');
+        document.documentElement.lang = 'ar';
+        document.getElementById('content').innerHTML = contentAr;
+    } else {
+        document.body.setAttribute('dir', 'ltr');
+        document.documentElement.lang = 'en';
+        document.getElementById('content').innerHTML = contentEn;
+    }
+</script>
 
 </body>
 </html>
